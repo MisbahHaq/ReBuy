@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:rebuy/Drawer/liked_items.dart';
-import 'package:rebuy/Drawer/listed_items.dart';
+import 'package:rebuy/Pages/listed_items.dart';
 import 'package:rebuy/Drawer/order_items.dart';
 import 'package:rebuy/Pages/explore.dart';
 import 'package:rebuy/Pages/home.dart';
 import 'package:rebuy/Pages/message.dart';
 
-class FloatingNavBarExample extends StatefulWidget {
+class FloatingNavBar extends StatefulWidget {
   @override
-  _FloatingNavBarExampleState createState() => _FloatingNavBarExampleState();
+  _FloatingNavBarState createState() => _FloatingNavBarState();
 }
 
-class _FloatingNavBarExampleState extends State<FloatingNavBarExample> {
+class _FloatingNavBarState extends State<FloatingNavBar> {
   int _selectedIndex = 0;
 
-  // Define the pages for navigation
   final List<Widget> _pages = [
     const HomeView(),
     const ExplorePage(),
@@ -35,14 +34,11 @@ class _FloatingNavBarExampleState extends State<FloatingNavBarExample> {
     return Scaffold(
       body: Stack(
         children: [
-          // Display the selected page
           _pages[_selectedIndex],
-
-          // Floating Navigation Bar
           Positioned(
-            bottom: 10, // Adjust the distance from the bottom of the screen
-            left: 16, // Adjust the distance from the left
-            right: 16, // Adjust the distance from the right
+            bottom: 10,
+            left: 16,
+            right: 16,
             child: Container(
               height: 70,
               decoration: BoxDecoration(

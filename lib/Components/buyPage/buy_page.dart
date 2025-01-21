@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rebuy/Components/constants.dart';
+import 'package:rebuy/Components/constants/buyCard.dart';
 import 'package:rebuy/Pages/home.dart';
 
 class BuyDetailsPage extends StatefulWidget {
@@ -28,7 +28,6 @@ class _BuyDetailsPageState extends State<BuyDetailsPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Header with "ReBuy" title and back button
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -36,7 +35,6 @@ class _BuyDetailsPageState extends State<BuyDetailsPage> {
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => HomeView()));
-                  // To go back to the HomeView page
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(left: 35, top: 40),
@@ -64,16 +62,12 @@ class _BuyDetailsPageState extends State<BuyDetailsPage> {
             ],
           ),
           const SizedBox(height: 40),
-
-          // Display Image
           Center(
             child: Container(
               child: Image.asset(widget.img, height: 150),
             ),
           ),
           const SizedBox(height: 20),
-
-          // Display Make and Year
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
@@ -112,13 +106,11 @@ class BuyPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Back Button and Title Row
           Padding(
             padding: const EdgeInsets.only(top: 40, left: 16, right: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Back Button
                 GestureDetector(
                   onTap: () => Navigator.pop(context),
                   child: Padding(
@@ -134,7 +126,6 @@ class BuyPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Title
                 Padding(
                   padding: const EdgeInsets.only(right: 25),
                   child: const Text(
@@ -157,8 +148,6 @@ class BuyPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-
-          // Product Card
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: BuyCard(
@@ -190,8 +179,7 @@ class BuyPage extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(
-                            height: 8), // Added spacing for better readability
+                        SizedBox(height: 8),
                         Text("Alice Eve"),
                         Text("2074, Half and Half Drive"),
                         Text("Hialeah, Florida - 33012"),
@@ -202,9 +190,7 @@ class BuyPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(right: 20, top: 13),
                     child: GestureDetector(
-                      onTap: () {
-                        // Handle edit action here
-                      },
+                      onTap: () {},
                       child: Container(
                         height: 50,
                         width: 50,
@@ -249,9 +235,7 @@ class BuyPage extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(
-                              height:
-                                  8), // Added spacing for better readability
+                          SizedBox(height: 8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [Text("Product cost:"), Text('$price')],

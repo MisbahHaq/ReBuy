@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rebuy/Components/constants/listingCard.dart';
 import 'package:rebuy/Pages/home.dart';
-import 'package:rebuy/components/constants.dart';
 
 class ListedItems extends StatefulWidget {
   const ListedItems({super.key});
@@ -20,16 +20,12 @@ class _ListedItemsState extends State<ListedItems> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header with "Liked Items" title and menu button
               Row(
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  HomeView())); // To go back to the HomeView page
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomeView()));
                     },
                     child: Container(
                       width: 50,

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:rebuy/Drawer/listed_items.dart';
+import 'package:rebuy/Components/constants/constants.dart';
+import 'package:rebuy/Components/constants/sidetile.dart';
+import 'package:rebuy/Components/product_Detail_Page/product_detail.dart';
+import 'package:rebuy/Pages/listed_items.dart';
 import 'package:rebuy/Drawer/liked_items.dart';
 import 'package:rebuy/Drawer/order_items.dart';
-import 'package:rebuy/components/constants.dart';
-import 'package:rebuy/components/product_detail.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -134,7 +135,6 @@ class _HomeViewState extends State<HomeView> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Header with avatar and menu
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Row(
@@ -179,7 +179,6 @@ class _HomeViewState extends State<HomeView> {
                 ],
               ),
             ),
-            // Search bar
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: TextField(
@@ -196,7 +195,6 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             const SizedBox(height: 25),
-            // New Arrivals
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -217,7 +215,6 @@ class _HomeViewState extends State<HomeView> {
               ],
             ),
             const SizedBox(height: 17),
-            // Horizontal scrollable product list
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Padding(
@@ -377,7 +374,6 @@ class _HomeViewState extends State<HomeView> {
               ],
             ),
             const SizedBox(height: 17),
-            // Horizontal scrollable product list
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Padding(

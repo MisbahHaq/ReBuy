@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rebuy/Components/constants.dart';
+import 'package:rebuy/Components/constants/orderCard.dart';
 import 'package:rebuy/Pages/home.dart';
 
 class OrderedPage extends StatefulWidget {
@@ -20,16 +20,12 @@ class _OrderedPageState extends State<OrderedPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header with "Liked Items" title and menu button
               Row(
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  HomeView())); // To go back to the HomeView page
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomeView()));
                     },
                     child: Container(
                       width: 50,
@@ -84,7 +80,6 @@ class _OrderedPageState extends State<OrderedPage> {
               const SizedBox(
                 height: 20,
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

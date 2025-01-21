@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:rebuy/Components/constants/likedCard.dart';
+import 'package:rebuy/Components/constants/sidetile.dart';
+import 'package:rebuy/Drawer/order_items.dart';
 import 'package:rebuy/Pages/home.dart';
-import 'package:rebuy/components/constants.dart';
+import 'package:rebuy/Pages/listed_items.dart';
 
 class LikedItems extends StatefulWidget {
   const LikedItems({super.key});
@@ -26,9 +29,9 @@ class _LikedItemsState extends State<LikedItems> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 20, top: 30),
-                    child: Text(
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, top: 30),
+                    child: const Text(
                       'ReBuy',
                       style: TextStyle(
                         color: Colors.black,
@@ -57,8 +60,8 @@ class _LikedItemsState extends State<LikedItems> {
             Expanded(
               child: ListView(
                 padding: EdgeInsets.zero,
-                children: const [
-                  sideTile(
+                children: [
+                  const sideTile(
                     TitleTile: "My Account",
                     iconTile: Icon(
                       Icons.person,
@@ -66,30 +69,62 @@ class _LikedItemsState extends State<LikedItems> {
                     ),
                     subTile: "Edit your details, Account settings",
                   ),
-                  SizedBox(height: 20),
-                  sideTile(
-                      TitleTile: "My Orders",
-                      iconTile: Icon(
-                        Icons.shopping_cart_outlined,
-                        size: 45,
-                      ),
-                      subTile: "View all your orders"),
-                  SizedBox(height: 20),
-                  sideTile(
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OrderedPage()));
+                    },
+                    child: const sideTile(
+                        TitleTile: "My Orders",
+                        iconTile: Icon(
+                          Icons.shopping_cart_outlined,
+                          size: 45,
+                        ),
+                        subTile: "View all your orders"),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ListedItems()));
+                    },
+                    child: const sideTile(
                       TitleTile: "My Listings",
                       iconTile: Icon(
                         Icons.list,
                         size: 45,
                       ),
-                      subTile: 'View your product listing for sale'),
-                  SizedBox(height: 20),
-                  sideTile(
+                      subTile: 'View your product listing for sale',
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LikedItems()));
+                    },
+                    child: const sideTile(
                       TitleTile: "Liked Items",
                       iconTile: Icon(
-                        Icons.favorite_border,
+                        Icons.list,
                         size: 45,
                       ),
-                      subTile: "See the products you have wishlisted"),
+                      subTile: 'See the products you have wishlisted',
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -102,7 +137,6 @@ class _LikedItemsState extends State<LikedItems> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header with "Liked Items" title and menu button
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -110,7 +144,6 @@ class _LikedItemsState extends State<LikedItems> {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => HomeView()));
-                      // To go back to the HomeView page
                     },
                     child: Container(
                       width: 50,

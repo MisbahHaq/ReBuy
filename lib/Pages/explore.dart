@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:rebuy/components/constants.dart';
-import 'package:rebuy/components/product_detail.dart';
+import 'package:rebuy/Components/constants/constants.dart';
+import 'package:rebuy/Components/constants/sidetile.dart';
+import 'package:rebuy/Components/product_Detail_Page/product_detail.dart';
+import 'package:rebuy/Drawer/liked_items.dart';
+import 'package:rebuy/Drawer/order_items.dart';
+import 'package:rebuy/Pages/listed_items.dart';
 
 class ExplorePage extends StatelessWidget {
   const ExplorePage({super.key});
@@ -41,7 +45,7 @@ class ExplorePage extends StatelessWidget {
                         size: 45,
                       ),
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        Navigator.of(context).maybePop();
                       },
                     ),
                   ),
@@ -52,8 +56,8 @@ class ExplorePage extends StatelessWidget {
             Expanded(
               child: ListView(
                 padding: EdgeInsets.zero,
-                children: const [
-                  sideTile(
+                children: [
+                  const sideTile(
                     TitleTile: "My Account",
                     iconTile: Icon(
                       Icons.person,
@@ -61,36 +65,62 @@ class ExplorePage extends StatelessWidget {
                     ),
                     subTile: "Edit your details, Account settings",
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  sideTile(
-                      TitleTile: "My Orders",
-                      iconTile: Icon(
-                        Icons.shopping_cart_outlined,
-                        size: 45,
-                      ),
-                      subTile: "View all your orders"),
-                  SizedBox(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OrderedPage()));
+                    },
+                    child: const sideTile(
+                        TitleTile: "My Orders",
+                        iconTile: Icon(
+                          Icons.shopping_cart_outlined,
+                          size: 45,
+                        ),
+                        subTile: "View all your orders"),
+                  ),
+                  const SizedBox(
                     height: 20,
                   ),
-                  sideTile(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ListedItems()));
+                    },
+                    child: const sideTile(
                       TitleTile: "My Listings",
                       iconTile: Icon(
                         Icons.list,
                         size: 45,
                       ),
-                      subTile: 'View your product listing for sale'),
-                  SizedBox(
+                      subTile: 'View your product listing for sale',
+                    ),
+                  ),
+                  const SizedBox(
                     height: 20,
                   ),
-                  sideTile(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LikedItems()));
+                    },
+                    child: const sideTile(
                       TitleTile: "Liked Items",
                       iconTile: Icon(
-                        Icons.favorite_border,
+                        Icons.list,
                         size: 45,
                       ),
-                      subTile: "See the products you have wishlisted"),
+                      subTile: 'See the products you have wishlisted',
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -103,7 +133,6 @@ class ExplorePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header with "Explore" title and menu button
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -127,7 +156,6 @@ class ExplorePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              // Search bar
               TextField(
                 decoration: InputDecoration(
                   fillColor: Colors.grey,
@@ -141,7 +169,6 @@ class ExplorePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              // Additional content for the Explore Page (placeholder)
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -248,7 +275,6 @@ class ExplorePage extends StatelessWidget {
                   productPrice: "500",
                 ),
               ),
-
               const SizedBox(height: 15),
               GestureDetector(
                 onTap: () {
@@ -277,7 +303,6 @@ class ExplorePage extends StatelessWidget {
                   productPrice: "389",
                 ),
               ),
-
               const SizedBox(height: 15),
               GestureDetector(
                 onTap: () {

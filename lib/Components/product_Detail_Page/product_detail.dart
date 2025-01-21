@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rebuy/components/constants.dart';
+import 'package:rebuy/Components/constants/constants.dart';
+import 'package:rebuy/Components/constants/productPageDetail.dart';
 
 class ProductDetail extends StatelessWidget {
   final String title;
@@ -32,14 +33,12 @@ class ProductDetail extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header Section
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Back Arrow Button
                   GestureDetector(
                     onTap: () {
-                      Navigator.pop(context); // To go back to the HomeView page
+                      Navigator.pop(context);
                     },
                     child: Container(
                       width: 50,
@@ -58,8 +57,6 @@ class ProductDetail extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 40),
-
-              // Product Details Section
               ProductPageDetail(
                 description: description,
                 img: img,
@@ -71,8 +68,6 @@ class ProductDetail extends StatelessWidget {
                 year: year,
               ),
               const SizedBox(height: 40),
-
-              // Recently Viewed Section
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
@@ -87,7 +82,6 @@ class ProductDetail extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 17),
-              // Horizontal scrollable product list
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
