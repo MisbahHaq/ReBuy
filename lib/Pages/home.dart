@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rebuy/Drawer/listing.dart';
-import 'package:rebuy/Pages/liked_items.dart';
+import 'package:rebuy/Drawer/listed_items.dart';
+import 'package:rebuy/Drawer/liked_items.dart';
+import 'package:rebuy/Drawer/order_items.dart';
 import 'package:rebuy/components/constants.dart';
 import 'package:rebuy/components/product_detail.dart';
 
@@ -71,13 +72,21 @@ class _HomeViewState extends State<HomeView> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const sideTile(
-                      TitleTile: "My Orders",
-                      iconTile: Icon(
-                        Icons.shopping_cart_outlined,
-                        size: 45,
-                      ),
-                      subTile: "View all your orders"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OrderedPage()));
+                    },
+                    child: const sideTile(
+                        TitleTile: "My Orders",
+                        iconTile: Icon(
+                          Icons.shopping_cart_outlined,
+                          size: 45,
+                        ),
+                        subTile: "View all your orders"),
+                  ),
                   const SizedBox(
                     height: 20,
                   ),

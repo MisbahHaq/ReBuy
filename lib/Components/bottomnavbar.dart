@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:rebuy/Drawer/listing.dart';
+import 'package:rebuy/Drawer/liked_items.dart';
+import 'package:rebuy/Drawer/listed_items.dart';
+import 'package:rebuy/Drawer/order_items.dart';
 import 'package:rebuy/Pages/explore.dart';
 import 'package:rebuy/Pages/home.dart';
-import 'package:rebuy/Pages/liked_items.dart';
 import 'package:rebuy/Pages/message.dart';
 
 class FloatingNavBarExample extends StatefulWidget {
@@ -20,6 +21,7 @@ class _FloatingNavBarExampleState extends State<FloatingNavBarExample> {
     const LikedItems(),
     const MessagePage(),
     const ListedItems(),
+    const OrderedPage(),
   ];
 
   void _onItemTapped(int index) {

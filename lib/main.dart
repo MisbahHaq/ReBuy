@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rebuy/Components/buy_page.dart';
 import 'package:rebuy/components/bottomnavbar.dart';
 
 void main() {

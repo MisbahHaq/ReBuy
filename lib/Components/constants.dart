@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rebuy/Components/buy_page.dart';
 
 class ProductCard extends StatelessWidget {
   final String imagePath;
@@ -308,6 +309,102 @@ class LikedCard extends StatelessWidget {
   }
 }
 
+class OrderCard extends StatelessWidget {
+  final String productName;
+  final String productDate;
+  final double productPrice;
+  final String productImage;
+
+  const OrderCard({
+    super.key,
+    required this.productName,
+    required this.productPrice,
+    required this.productDate,
+    required this.productImage,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.all(10),
+      height: 115,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: const Color.fromRGBO(8, 126, 139, 0.14),
+      ),
+      child: Row(
+        children: [
+          // Product Image
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(
+              productImage,
+              height: 90,
+              width: 90,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const SizedBox(width: 20),
+          // Product Details
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  productName,
+                  style: const TextStyle(
+                    fontSize: 19,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  productDate,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "\$${productPrice.toStringAsFixed(2)}",
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                      ),
+                    ),
+                    Container(
+                      width: 88,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: const Color.fromRGBO(60, 60, 60, 1),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Rate now",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class MessageTile extends StatelessWidget {
   final String userImage;
   final String productName;
@@ -565,13 +662,11 @@ class ProductPageDetail extends StatelessWidget {
           const SizedBox(height: 10),
 
           // Product Details: Make and Year
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("Make: $make" + " | " "Year: $year",
-                  style: const TextStyle(fontSize: 20)),
-            ],
+          Text(
+            "Make: $make | Year: $year",
+            style: const TextStyle(fontSize: 20),
           ),
+          const SizedBox(height: 10),
 
           // Warranty and Packing in a Row
           Row(
@@ -589,10 +684,79 @@ class ProductPageDetail extends StatelessWidget {
           ),
           const SizedBox(height: 20),
 
-          // Export Image on the Left
-          Image.asset(
-            "assets/images/export.png",
-            height: 80,
+          // Export Image
+          Center(
+            child: Image.asset(
+              "assets/images/export.png",
+              height: 80,
+            ),
+          ),
+          const SizedBox(height: 15),
+
+          // Action Buttons
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Save Item Button
+              GestureDetector(
+                onTap: () {
+                  // Handle Save action
+                },
+                child: Container(
+                  height: 70,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  alignment: Alignment.center,
+                  child: const Text(
+                    "Save Item",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 25),
+
+              // Buy Now Button
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BuyPage(
+                        img: img,
+                        make: make,
+                        year: year,
+                        name: title,
+                        price: price,
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 70,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    color: Colors.redAccent,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  alignment: Alignment.center,
+                  child: const Text(
+                    "Buy Now",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -693,6 +857,90 @@ class ListingCard extends StatelessWidget {
                       child: const Icon(
                         Icons.visibility_off_rounded,
                         color: Colors.black87,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class BuyCard extends StatelessWidget {
+  final String productName;
+  final String productMake;
+  final String productYear;
+  final double productPrice;
+  final String productImage;
+
+  const BuyCard({
+    super.key,
+    required this.productName,
+    required this.productPrice,
+    required this.productImage,
+    required this.productMake,
+    required this.productYear,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.all(10),
+      height: 115,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: const Color.fromRGBO(8, 126, 139, 0.14),
+      ),
+      child: Row(
+        children: [
+          // Product Image
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(
+              productImage,
+              height: 90,
+              width: 90,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const SizedBox(width: 20),
+          // Product Details
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  productName,
+                  style: const TextStyle(
+                    fontSize: 19,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  productMake + " | " + productYear,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "\$${productPrice.toStringAsFixed(2)}",
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(27, 94, 32, 1),
                       ),
                     ),
                   ],
