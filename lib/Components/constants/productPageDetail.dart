@@ -32,7 +32,7 @@ class ProductPageDetail extends StatelessWidget {
           Center(
             child: Container(
               height: 260,
-              width: 360,
+              width: 370,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(img),
@@ -63,10 +63,13 @@ class ProductPageDetail extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Text(
                     "\$${price.toStringAsFixed(2)}",
                     style: const TextStyle(
-                      fontSize: 25,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 20, 96, 23),
                     ),
@@ -98,7 +101,7 @@ class ProductPageDetail extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 7),
+          const SizedBox(height: 20),
           Text(
             description,
             style: const TextStyle(
@@ -107,7 +110,7 @@ class ProductPageDetail extends StatelessWidget {
             ),
             textAlign: TextAlign.left,
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 20),
           Text(
             "Make: $make | Year: $year",
             style: const TextStyle(fontSize: 20),

@@ -94,15 +94,16 @@ class ProductDetail extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) => ProductDetail(
-                                  title: "Macbook Air 2017",
-                                  img: "assets/images/mac.jpg",
-                                  price: 289,
-                                  description:
-                                      "Macbook Air 2017 offers a sleek design, 13.3-inch display, long battery life, and reliable performance with an Intel Core i5, 8GB RAM, and SSD storage—perfect for work, study, or travel.",
-                                  make: "California",
-                                  year: "2017",
-                                  warranty: "No",
-                                  packing: "Yes"),
+                                title: "Macbook Air 2017",
+                                img: "assets/images/mac.jpg",
+                                price: 289,
+                                description:
+                                    "Macbook Air 2017 offers a sleek design, 13.3-inch display, long battery life, and reliable performance with an Intel Core i5, 8GB RAM, and SSD storage—perfect for work, study, or travel.",
+                                make: "California",
+                                year: "2017",
+                                warranty: "No",
+                                packing: "Yes",
+                              ),
                             ),
                           );
                         },
@@ -120,15 +121,16 @@ class ProductDetail extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) => ProductDetail(
-                                  title: "Iphone 11",
-                                  img: "assets/images/phone.jpg",
-                                  price: 189,
-                                  description:
-                                      " dual-camera system with Night Mode, A13 Bionic chip for fast performance, and long-lasting battery life. A durable, water-resistant design makes it a reliable and stylish choice.",
-                                  make: "California",
-                                  year: "2021",
-                                  warranty: "No",
-                                  packing: "Yes"),
+                                title: "Iphone 11",
+                                img: "assets/images/phone.jpg",
+                                price: 189,
+                                description:
+                                    "Dual-camera system with Night Mode, A13 Bionic chip for fast performance, and long-lasting battery life. A durable, water-resistant design makes it a reliable and stylish choice.",
+                                make: "California",
+                                year: "2021",
+                                warranty: "No",
+                                packing: "Yes",
+                              ),
                             ),
                           );
                         },
@@ -146,14 +148,15 @@ class ProductDetail extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) => ProductDetail(
-                                  title: "Batman Toy",
-                                  img: "assets/images/product.png",
-                                  price: 89,
-                                  description: "Batman Toy for Kids",
-                                  make: "make",
-                                  year: "year",
-                                  warranty: "warranty",
-                                  packing: "packing"),
+                                title: "Batman Toy",
+                                img: "assets/images/product.png",
+                                price: 89,
+                                description: "Batman Toy for Kids",
+                                make: "make",
+                                year: "year",
+                                warranty: "warranty",
+                                packing: "packing",
+                              ),
                             ),
                           );
                         },

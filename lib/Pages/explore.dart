@@ -331,6 +331,93 @@ class ExplorePage extends StatelessWidget {
                   productPrice: "489",
                 ),
               ),
+              const SizedBox(height: 15),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductDetail(
+                          title: "Iphone 13",
+                          img: "assets/images/phone.jpeg",
+                          price: 550,
+                          description:
+                              "The iPhone 13 display has rounded corners that follow a beautiful curved design, and these corners are within a standard rectangle. When measured as a standard rectangular shape, the screen is 6.06 inches diagonally",
+                          make: "California",
+                          year: "2024",
+                          warranty: "Yes",
+                          packing: "Yes"),
+                    ),
+                  );
+                },
+                child: ProductCard2(
+                  userName: "Frank N. Stein",
+                  userLocation: "Shangri La",
+                  userImage: "assets/images/user2.png",
+                  productImage: "assets/images/phone.jpeg",
+                  productName: "Iphone 13",
+                  productDetails: "Make: California | Year: 2024",
+                  productPrice: "550",
+                ),
+              ),
+              const SizedBox(height: 25),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductDetail(
+                          title: "Sofa",
+                          img: "assets/images/sofa.png",
+                          price: 189,
+                          description:
+                              "coloured sofa while plain cushions will help give your living room a sense of cohesion as it can be in the colour palette that best fits in with the rest of the existing decorative items.",
+                          make: "Local",
+                          year: "2020",
+                          warranty: "Yes",
+                          packing: "Yes"),
+                    ),
+                  );
+                },
+                child: ProductCard2(
+                  userName: "Cliff Hanger",
+                  userLocation: "El Dorado",
+                  userImage: "assets/images/user1.png",
+                  productImage: "assets/images/sofa.png",
+                  productName: "Sofa",
+                  productDetails: "Make: Local | Year: 2020",
+                  productPrice: "189",
+                ),
+              ),
+              const SizedBox(height: 25),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductDetail(
+                          title: "Swiss Movado",
+                          img: "assets/images/watched2.png",
+                          price: 220,
+                          description:
+                              "This quest for innovation has made us one of the world's premier watchmakers, with a proud heritage of Swiss craftsmanship, design excellence, and technological innovation. With more than 100 patents and 200 international awards for watch design and time technology, Movado continues innovating into the future.",
+                          make: "Swiss",
+                          year: "2020",
+                          warranty: "Yes",
+                          packing: "Yes"),
+                    ),
+                  );
+                },
+                child: ProductCard2(
+                  userName: "Cliff Hanger",
+                  userLocation: "El Dorado",
+                  userImage: "assets/images/user1.png",
+                  productImage: "assets/images/watched2.png",
+                  productName: "Swiss Movado",
+                  productDetails: "Make: Swiss | Year: 2020",
+                  productPrice: "220",
+                ),
+              ),
             ],
           ),
         ),

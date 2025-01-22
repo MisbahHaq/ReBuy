@@ -150,7 +150,7 @@ class _HomeViewState extends State<HomeView> {
                       child: CircleAvatar(
                         radius: 40,
                         backgroundImage:
-                            AssetImage('assets/images/product.png'),
+                            AssetImage('assets/images/userfinal.png'),
                       ),
                     ),
                   ),
@@ -221,6 +221,58 @@ class _HomeViewState extends State<HomeView> {
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
                   children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ProductDetail(
+                                title: "BMX Cycle",
+                                img: "assets/images/cycle.png",
+                                price: 894,
+                                description:
+                                    "If you are looking for an affordable, portable, and versatile bike that is great for racing, riding in the street, and dirt jumping, then BMX is a great option. ",
+                                make: "BMX",
+                                year: "2014",
+                                warranty: "No",
+                                packing: "Yes"),
+                          ),
+                        );
+                      },
+                      child: ProductCard(
+                        imagePath: "assets/images/cycle.png",
+                        title: "BMX Cycle",
+                        subtitle: "2022 | Rolex",
+                        price: "894",
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ProductDetail(
+                                title: "Rolex Perpetual",
+                                img: "assets/images/watched1.png",
+                                price: 230,
+                                description:
+                                    "Make the World Your Oyster — These watches embody timeless form and function, firmly rooted in the origins of Rolex®. Excellent chronometric precision, waterproof case and self-winding movement",
+                                make: "Rolex",
+                                year: "2022",
+                                warranty: "Yes",
+                                packing: "Yes"),
+                          ),
+                        );
+                      },
+                      child: ProductCard(
+                        imagePath: "assets/images/watched1.png",
+                        title: "Rolex Perpetual",
+                        subtitle: "2022 | Rolex",
+                        price: "230",
+                      ),
+                    ),
+                    const SizedBox(width: 10),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(

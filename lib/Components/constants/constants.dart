@@ -79,11 +79,14 @@ class ProductCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Text(
-                        "\$$price",
-                        style: const TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: Text(
+                          "\$$price",
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                       ),
                     ],
