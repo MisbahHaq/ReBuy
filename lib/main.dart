@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rebuy/Pages/splash.dart';
+import 'package:rebuy/OnBoarding/splash.dart';
 
 void main() {
   runApp(const MyApp());

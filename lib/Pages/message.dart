@@ -3,6 +3,7 @@ import 'package:rebuy/Components/constants/messagetile.dart';
 import 'package:rebuy/Components/constants/sidetile.dart';
 import 'package:rebuy/Drawer/liked_items.dart';
 import 'package:rebuy/Drawer/order_items.dart';
+import 'package:rebuy/Drawer/profile.dart';
 import 'package:rebuy/Pages/listed_items.dart';
 
 class MessagePage extends StatelessWidget {
@@ -55,13 +56,20 @@ class MessagePage extends StatelessWidget {
               child: ListView(
                 padding: EdgeInsets.zero,
                 children: [
-                  const sideTile(
-                    TitleTile: "My Account",
-                    iconTile: Icon(
-                      Icons.person,
-                      size: 45,
-                    ),
-                    subTile: "Edit your details, Account settings",
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfilePage()));
+                    },
+                    child: const sideTile(
+                        TitleTile: "My Account",
+                        iconTile: Icon(
+                          Icons.shopping_cart_outlined,
+                          size: 45,
+                        ),
+                        subTile: "Edit your details, Account settings"),
                   ),
                   const SizedBox(
                     height: 20,
