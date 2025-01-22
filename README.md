@@ -1,16 +1,26 @@
-# rebuy
+# **ReBuy: Buy & Sell Used Items**
 
-A new Flutter project.
+ReBuy is a mobile app that enables users to buy and sell used items seamlessly. Whether you're looking to declutter your home or find a great deal on secondhand goods, ReBuy makes the process quick, easy, and secure.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Browse Used Items**: Explore various categories of used products including electronics, furniture, clothing, and more.
+- **Buy & Sell**: List your own used items for sale or purchase from other sellers.
+- **Secure Transactions**: In-app chat and payment options to ensure a safe and smooth transaction process.
+- **Favorites**: Save your favorite products and receive notifications when they are on sale or updated.
+- **User Profiles**: Build a profile to showcase your listings and reputation as a seller or buyer.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![ReBuy Home Screen](path_to_screenshot_1.png)  
+_Description of Home Screen._
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![ReBuy Product Details](path_to_screenshot_2.png)  
+_Description of Product Details Screen._
+
+## Technologies Used
+
+- **Flutter**: For building a smooth, cross-platform user experience.
+- **Firebase**: For real-time data storage and authentication.
+- **GetX**: For state management and routing.
+- **Dart**: For building the app's logic.
